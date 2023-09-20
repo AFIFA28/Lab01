@@ -1,0 +1,135 @@
+spicy_foods = [
+    {
+        "name": "Green Curry",
+        "cuisine": "Thai",
+        "heat_level": 9,
+    },
+    {
+        "name": "Buffalo Wings",
+        "cuisine": "American",
+        "heat_level": 3,
+    },
+    {
+        "name": "Mapo Tofu",
+        "cuisine": "Sichuan",
+        "heat_level": 6,
+    },
+]
+
+#QUESTION NO. 1:
+def get_names(spicy_foods):
+    return [food['name'] for food in spicy_foods]
+names_of_spicy_food=get_names(spicy_foods)
+
+    
+#QUESTION NO. 2:
+def get_spiciest_foods(spicy_foods):
+    spiciest_foods=[food for food in spicy_foods if food['heat_level']>5]
+    return spiciest_foods
+spiciest_food_list=get_spiciest_foods(spicy_foods)
+for food in spiciest_food_list:
+    print(food) 
+
+
+#QUESTION NO. 3:
+def print_spicy_foods(spicy_foods):
+    spiciest=[]
+    max_heat_level=0
+    for food in spicy_foods:
+        if food['heat_level']>max_heat_level:
+            spiciest=[food]
+            max_heat_level=food['heat_level']
+        elif food['heat_level']==max_heat_level:
+            spiciest.append(food)
+    return spiciest 
+result=get_spiciest_foods(spicy_foods)
+print(result)
+
+
+#QUESTION NO. 4:
+def print_spicy_foods(spicy_foods):
+    for food in spicy_foods:
+        name=food['name']
+        cuisine=food['cuisine']
+        heat_level=food['heat_level']
+        emojis='*' * heat_level
+        print(f" {name} ({cuisine}) | heat level:{emojis}.")
+        
+print_spicy_foods(spicy_foods)
+
+
+#QUESTION NO. 5:
+def print_spicy_foods(foods):
+    for food in foods:
+        heat_level='*' * food['heat_level']
+        print(f"{food['name']} ({food['cuisine']}) | Heat level: {heat_level}")
+
+print_spicy_foods(spicy_foods)
+
+
+#QUESTION NO. 6:
+def get_spicy_food_by_cuisine(spicy_foods,cuisine):
+    for food in spicy_foods:
+        if food['cuisine']==cuisine:
+            return food
+    return None
+american_food=get_spicy_food_by_cuisine(spicy_foods, 'American')
+print(american_food)
+
+thai_food=get_spicy_food_by_cuisine(spicy_foods, 'Thai')
+print(thai_food)
+
+
+#QUESTION NO. 7:
+def get_spicy_food_by_cuisine(spicy_foods, cuisine):
+    for food in spicy_foods:
+        if food['cuisine']==cuisine:
+            return food
+    return None
+result=get_spicy_food_by_cuisine(spicy_foods, 'Thai')
+print(result)
+
+
+#QUESTION NO. 8:
+def print_spiciest_foods(spicy_foods):
+     for food in spicy_foods:
+         if food ['heat_level']>5:
+             heat_level = '*' * food['heat_level']
+             print(f" {food['name']} )({food['cuisine']}) | Heat level: {heat_level}.")
+             
+print_spiciest_foods(spicy_foods)
+
+
+#QUESTION NO. 9:
+def print_spiciest_foods(foods):
+    spiciest_foods=[food for food in foods if food ['heat_level']>=5]
+    for food in spiciest_foods:
+        heat_level_emojis= '*' * food['heat_level']
+        print(f" {food['name']} ({food['cuisine']}) | Heat level: {heat_level_emojis}")
+        
+print_spiciest_foods(spicy_foods)
+
+
+#QUESTION NO. 10:
+def average_heat_level(foods):
+    if not foods:
+        return 0
+    total_heat_level=sum(food['heat_level'] for food in foods)
+    return total_heat_level//len(foods)
+
+avg_heat_level=average_heat_level(spicy_foods)
+print(avg_heat_level)
+
+
+#QUESTION NO. 11:
+def create_spicy_food(spicy_foods, new_spicy_food):
+    spicy_foods.append(new_spicy_food)
+    return spicy_foods
+new_spicy_food={'name':'Griot','cuisine':'Haitian','heat_level':10}
+
+updated_spicy_foods=create_spicy_food(spicy_foods, new_spicy_food)
+for food in updated_spicy_foods:
+    print(food)
+                               
+
+
